@@ -20,4 +20,6 @@ Route::get('/help', function(){
     return view('help');
 })->name('help');
 
-// Voeg hier je eigen routes toe
+Route::get('/links', 'LinksController@index')->name('links');
+Route::get('/links-toevoegen', 'LinksController@showLinksForm')->name('links-toevoegen');
+Route::POST('/link-opslaan', 'LinksController@handleLinksForm')->name('links-opslaan');
